@@ -66,7 +66,7 @@ class Server {
    * @return \Phagrant\Server
    */
   public function import($box) {
-    $path = sprintf('/Users/shin/.vagrant.d/boxes/%s/virtualbox/box.ovf', $box);
+    $path = sprintf('%s/.vagrant.d/boxes/%s/virtualbox/box.ovf', getenv('HOME'), $box);
     if (!file_exists($path)) {
       throw new \Exception($path);
     }

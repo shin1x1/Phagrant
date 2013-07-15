@@ -51,7 +51,7 @@ foreach ($values as $v) {
     }
   }
 
-  $publicKey = file_get_contents('/Users/shin/.ssh/id_rsa.pub');
+  $publicKey = file_get_contents(getenv('HOME').'/.ssh/id_rsa.pub');
   $command = sprintf('echo "%s" >> /home/vagrant/.ssh/authorized_keys', $publicKey);
   $provision->command($command);
 }
